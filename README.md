@@ -23,36 +23,88 @@ This dataset contains realistic university data for practicing API development. 
 6. **Grades** (6 records)
    - id, enrollmentId, assignmentId, score, submittedDate, feedback
 
-## Practice Exercises
+## Quick start
 
-### Level 1: Basic CRUD Operations
+1. Copy the dataset JSON files into a `data/` folder (suggested filenames below).
+2. Serve the files or load them into your API mock/server (e.g., json-server, Express).
+3. Implement RESTful endpoints described below and point them to the corresponding JSON resources.
 
-Build RESTful endpoints for each entity:
+## Data format & sample
 
-**Students**
-- `GET /api/students` - Get all students
-- `GET /api/students/:id` - Get student by ID
+Suggested data file names:
+- data/students.json
+- data/instructors.json
+- data/courses.json
+- data/enrollments.json
+- data/assignments.json
+- data/grades.json
 
-Repeat for: instructors, courses, enrollments, assignments, grades
+Students JSON sample:
+```json
+[
+  {
+    "id": 1,
+    "firstName": "Aisha",
+    "lastName": "Khan",
+    "email": "aisha.khan@example.edu",
+    "enrollmentDate": "2021-08-23",
+    "major": "Computer Science",
+    "gpa": 3.75,
+    "year": "Sophomore",
+    "active": true
+  },
+  {
+    "id": 2,
+    "firstName": "Daniel",
+    "lastName": "Ortiz",
+    "email": "daniel.ortiz@example.edu",
+    "enrollmentDate": "2020-09-01",
+    "major": "Mathematics",
+    "gpa": 3.42,
+    "year": "Junior",
+    "active": true
+  }
+]
+```
 
+## Endpoints mapping (quick reference)
 
-### Level 2: Nested Resources & Relationships
+- Students
+  - GET /api/students
+  - GET /api/students/:id
+  - GET /api/students/:id/enrollments
+  - GET /api/students/:id/courses
+  - GET /api/students/:id/gpa
+  - GET /api/students/:id/schedule
 
-Create endpoints that fetch related data:
+- Instructors
+  - GET /api/instructors
+  - GET /api/instructors/:id
+  - GET /api/instructors/:id/courses
+  - GET /api/instructors/:id/students
 
-- `GET /api/students/:id/enrollments` - Get student's enrollments
-- `GET /api/students/:id/courses` - Get student's courses
-- `GET /api/courses/:id/students` - Get students in a course
-- `GET /api/instructors/:id/courses` - Get instructor's courses
-- `GET /api/courses/:id/assignments` - Get course assignments
-- `GET /api/enrollments/:id/grades` - Get grades for enrollment
+- Courses
+  - GET /api/courses
+  - GET /api/courses/:id
+  - GET /api/courses/:id/students
+  - GET /api/courses/:id/assignments
+  - GET /api/courses/:id/average
 
-### Level 3: Advanced Queries
+- Enrollments
+  - GET /api/enrollments
+  - GET /api/enrollments/:id
+  - GET /api/enrollments/:id/grades
 
-Build complex query endpoints:
+- Assignments
+  - GET /api/assignments
+  - GET /api/assignments/:id
 
-- `GET /api/students/:id/gpa` - Calculate and return student's GPA
-- `GET /api/courses/:id/average` - Calculate course average grade
-- `GET /api/instructors/:id/students` - Get all students taught by instructor
-- `GET /api/students/:id/schedule` - Get student's current schedule
+- Grades
+  - GET /api/grades
+  - GET /api/grades/:id
+
+## Notes
+
+- Use the sample JSON structure above as a template for other entity files.
+- Keep IDs consistent across files to preserve relationships (studentId, courseId, enrollmentId, assignmentId).
 

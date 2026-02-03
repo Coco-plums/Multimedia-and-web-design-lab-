@@ -1,0 +1,21 @@
+npm verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+npm info using npm@11.6.2
+npm info using node@v24.13.0
+npm verbose title npm install
+npm verbose argv "install" "--loglevel" "verbose"
+npm verbose logfile logs-max:10 dir:C:\Users\DELL\AppData\Local\npm-cache\_logs\2026-02-03T14_38_50_986Z-
+npm verbose logfile C:\Users\DELL\AppData\Local\npm-cache\_logs\2026-02-03T14_38_50_986Z-debug-0.log
+npm http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 2152ms
+
+up to date, audited 93 packages in 3s
+
+26 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+npm verbose cwd C:\Users\DELL\Desktop\multimedia and web design lab\lab-work1-Coco-plums
+npm verbose os Windows_NT 10.0.26200
+npm verbose node v24.13.0
+npm verbose npm  v11.6.2
+npm verbose exit 0
+npm info ok
